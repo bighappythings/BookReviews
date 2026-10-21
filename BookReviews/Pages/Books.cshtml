@@ -1,0 +1,41 @@
+﻿@page
+@model BookReviews.Pages.BooksModel
+
+@using BookReviews.Models 
+
+@{
+    <h1>Books</h1>
+
+    <form method="post">
+        <label for="id">Id</label>
+        <input type="number" name="id"/>
+
+        <label for="name">Name</label>
+        <input type="text" name="name" />
+
+        <label for="publicationDate">Publication Date</label>
+        <input type="text" name="publicationDate" />
+
+        <button class="btn" type="submit">Add</button>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Publication Date</th>
+             </tr>
+       </thead>
+        <tbody>
+            @foreach(Book book in Model.Books)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.Title</td>
+                    <td>@book.PublicationDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

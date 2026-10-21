@@ -1,0 +1,56 @@
+﻿@page
+@model BookReviews.Pages.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Are you sure you want to delete this?</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Book!.Title);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Book!.Title);
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Book!.Description);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Book!.Description);
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Book!.Author);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Book!.Author);
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Book!.Genre);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Book!.Genre);
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Book!.PublicationDate);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Book!.PublicationDate);
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Book!.Rating);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Book!.Rating);
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Book.Id"/>
+        <a asp-page="./Index" class="btn btn-primary">Back</a>
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+    </form>
+</div>
+
+
