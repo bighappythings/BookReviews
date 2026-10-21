@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Books List</h1>
+    <p>Browse your book reviews below.</p>
+    <hr />
+    <a href="./Create" class="btn btn-success">Create</a>
+    <table class="table table-responsive table-striped table-hover align-middle">
+        <thead>
+            <tr class="text-center">
+                <th>Id</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Genre</th>
+                <th>Publication Date</th>
+                <th>BookRating</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var book in Model.Books)
+            {
+                <tr class="text-center">
+                    <td>@book.Id</td>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.Description</td>
+                    <td>@book.Genre</td>
+                    <td>@book.PublicationDate</td>
+                    <td>@book.Rating</td>
+                    <td>
+                        <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@book.Id">Edit</a>
+                        <a class="btn btn-success" asp-page="./Details" asp-route-id="@book.Id">Details</a>
+                        <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@book.Id">Delete</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

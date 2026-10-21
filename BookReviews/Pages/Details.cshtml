@@ -1,0 +1,53 @@
+﻿@page
+@model BookReviews.Pages.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<hr/>
+<div>
+    <dl class="row">
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Books!.Title);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Books!.Title);
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Books!.Description);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Books!.Description);
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Books!.Author);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Books!.Author);
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Books!.Genre);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Books!.Genre);
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Books!.PublicationDate);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Books!.PublicationDate);
+        </dd>
+        <dt class="col-2">
+            @Html.DisplayNameFor(model => model.Books!.Rating);
+        </dt>
+        <dd class="col-10">
+            @Html.DisplayFor(model => model.Books!.Rating);
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-page="./Index" class="btn btn-danger">Back</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Books!.Id" class="btn btn-primary">Edit</a>
+</div>
