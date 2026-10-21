@@ -1,5 +1,9 @@
 *.log
 
+.vs/
+bin/
+obj/
+*.csproj.user
 
 
 
